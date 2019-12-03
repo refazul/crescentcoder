@@ -1,0 +1,42 @@
+//@import "bootstrap-4.3.1/bootstrap.scss";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/brands.scss";
+@import "fontawesome/regular.scss";
+
+@import 'bootstrap-4.3.1/functions';
+@import 'bootstrap-variables';
+@import 'bootstrap-4.3.1/bootstrap';
+
+@import "admin-lte/AdminLTE.scss";
+
+body {
+	background-color: burlywood;
+}
+
+.slick-slide {
+	height: auto;
+}
+.slick-prev {
+    left: 0px;
+    z-index: 10;
+}
+.slick-next {
+    right: 0px;
+    z-index: 10;
+}
+
+.image {
+	position: relative;
+	.imageinner {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-size: cover;
+	}
+	&:after {
+		display: block;
+		content: '';
+		padding-top: 56.25%;
+	}
+}
