@@ -2,15 +2,18 @@
 
 export ROOT_FOLDER='/var/www/html'
 export APP_FOLDER='crescentcoder'
-export TAR_FILE_NAME='crescentcoder.tar.bz2'
+export TAR_FILE_NAME='crescentcoder.tar.gz'
 
+pm2 stop server
+pm2 delete server
 rm -rf $ROOT_FOLDER/$APP_FOLDER/*
 mv $ROOT_FOLDER/$TAR_FILE_NAME $ROOT_FOLDER/$APP_FOLDER/$TAR_FILE_NAME
 cd $ROOT_FOLDER/$APP_FOLDER
-tar -xjf $TAR_FILE_NAME
+tar -xf $TAR_FILE_NAME
 npm install --save
 rm -rf $TAR_FILE_NAME
 chown -R www-data:www-data .
+pm2 start server.js
 
 /bin/cat <<EOM >/etc/nginx/sites-available/$APP_FOLDER
 server {
@@ -33,4 +36,4 @@ server {
 EOM
 
 ln -s /etc/nginx/sites-available/$APP_FOLDER /etc/nginx/sites-enabled/$APP_FOLDER
-#sudo service nginx restart
+sudo service nginx restart
