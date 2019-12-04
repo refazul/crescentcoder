@@ -29,6 +29,12 @@ const Carousel = (props) => {
 			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/fonz1.png')"}}></div></div></div>
 			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/fonz2.png')"}}></div></div></div>
 			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/fonz3.png')"}}></div></div></div>
+			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/synergy/media/galleries/image_gallery/thumbs/thumb-video1.jpg')"}}></div></div></div>
+			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/synergy/media/galleries/image_gallery/thumbs/thumb-video2.jpg')"}}></div></div></div>
+			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/synergy/media/galleries/image_gallery/thumbs/thumb-video3.jpg')"}}></div></div></div>
+			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/synergy/media/galleries/image_gallery/thumbs/thumb-video4.jpg')"}}></div></div></div>
+			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/synergy/media/galleries/image_gallery/thumbs/thumb-video5.jpg')"}}></div></div></div>
+			<div><div className="image"><div className="imageinner" style={{backgroundImage: "url('img/synergy/media/galleries/image_gallery/thumbs/thumb-video6.jpg')"}}></div></div></div>
 			
 		</div>
 	);

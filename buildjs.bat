@@ -1,1 +1,1 @@
-npm install --save-dev
+npm run buildjs
