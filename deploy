@@ -7,10 +7,11 @@ export HOME_DIR=/Users/refazul/
 export VPS_KEY=$HOME_DIR/.ssh/id_contabo
 export VPS_USER='root'
 export VPS_IP='80.241.216.147'
-export TAR_FILE_NAME='crescentcoder.tar.gz'
 
+export TAR_FILE_NAME='crescentcoder.tar.gz'
 rm -rf $DIR/$TAR_FILE_NAME
 tar -cf $TAR_FILE_NAME public views server.js package.json
 scp -i $VPS_KEY $DIR/$TAR_FILE_NAME $VPS_USER@$VPS_IP:/var/www/html/$TAR_FILE_NAME
-ssh -i $VPS_KEY $VPS_USER@$VPS_IP "sudo bash -s" < $DIR/server.sh
 rm -rf $DIR/$TAR_FILE_NAME
+
+ssh -i $VPS_KEY $VPS_USER@$VPS_IP "sudo bash -s" < $DIR/server.sh
