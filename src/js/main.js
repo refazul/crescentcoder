@@ -6,20 +6,26 @@ import Sidebarmenu from "./sidebarmenu";
 import Carousel from "./carousel";
 import Datatable from "./datatable";
 
+import Barchart from './barchart';
 
-export default class Main extends Component {
-    render() {
-        return (
-            <div className="wrapper">
-                <section className="content-wrapper">
-                    <section className="content">
-                        <Datatable {...datatable_data} />
-                        <Carousel />
-                    </section>
+const Main = (props) => {
+    const [data, setData] = useState([50, 100, 150, 200, 250, 130, 210, 30, 170]);
+    useEffect(() => {
+        setTimeout(() => {
+            setData(data => data.map(d => d + 1))
+        }, 1000);
+    }, [])
+    return (
+        <div className="wrapper">
+            <section className="content-wrapper">
+                <section className="content">
+                    <Datatable {...datatable_data} />
+                    <Barchart data={data} />
+                    <Carousel />
                 </section>
-                <Sidebarmenu {...sidebarmenu_data} />
-            </div>
-        );
-    }
+            </section>
+            <Sidebarmenu {...sidebarmenu_data} />
+        </div>
+    );
 }
 ReactDOM.render(<Main />, document.querySelector("#main"))
