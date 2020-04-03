@@ -11,8 +11,8 @@ import Barchart from './barchart';
 const Main = (props) => {
     const [data, setData] = useState([50, 100, 150, 200, 250, 130, 210, 30, 170]);
     useEffect(() => {
-        setTimeout(() => {
-            setData(data => data.map(d => d + 1))
+        setInterval(() => {
+            setData(data => data.map((d, i) => (i == Math.floor(Math.random() * 9)) ? d + (Math.floor(Math.random() * 2) == 0 ? 1 : -1) : d))
         }, 1000);
     }, [])
     return (
