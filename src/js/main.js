@@ -13,7 +13,7 @@ const Main = (props) => {
     useEffect(() => {
         setInterval(() => {
             setData(data => data.map((d, i) => (i == Math.floor(Math.random() * 9)) ? d + (Math.floor(Math.random() * 2) == 0 ? 1 : -1) : d))
-        }, 1000);
+        }, 100);
     }, [])
     return (
         <div className="wrapper">
