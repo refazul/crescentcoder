@@ -7,15 +7,17 @@ const Radial = (props) => {
     const height = 480;
     const radius = width / 2;
     function tree(data) {
+        const root = d3.hierarchy(data)
+            .sort((a, b) => d3.ascending(a.data.name, b.data.name))
         return d3.tree()
             .size([2 * Math.PI, radius])
-            .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)(data);
+            .separation((a, b) => (a.parent == b.parent ? 1 : 2) / a.depth)
+            (root);
     }
     useEffect(() => {
         d3.select(domref.current).selectAll('svg').remove();
 
-        const data = d3.hierarchy(props.data).sort((a, b) => d3.ascending(a.data.name, b.data.name))
-        console.log(data);
+        const data = props.data;
         const root = tree(data);
 
         const svg = d3.select(domref.current)

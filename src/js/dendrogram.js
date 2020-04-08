@@ -8,13 +8,16 @@ const Dendrogram = (props) => {
         const root = d3.hierarchy(data);
         root.dx = 10;
         root.dy = width / (root.height + 1);
-        return d3.tree().nodeSize([root.dx, root.dy])(root);
+        return d3.tree()
+            .nodeSize([root.dx, root.dy])
+            (root);
     }
     useEffect(() => {
         d3.select(domref.current).selectAll('svg').remove();
 
         const data = props.data;
         const root = tree(data);
+        
         let x0 = Infinity;
         let x1 = -x0;
         root.each(d => {
