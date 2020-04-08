@@ -8,6 +8,7 @@ import Datatable from "./datatable";
 
 import Barchart from './barchart';
 import Dendrogram from './dendrogram';
+import Radial from './radial';
 
 const Main = (props) => {
     const [data, setData] = useState([50, 100, 150, 200, 250, 130, 210, 30, 170, 0, 500]);
@@ -22,6 +23,7 @@ const Main = (props) => {
                 <section className="content">
                     <Datatable {...datatable_data} />
                     <Barchart data={data} />
+                    <Radial data={flare_data} />
                     <Dendrogram data={flare_data} />
                 </section>
             </section>
