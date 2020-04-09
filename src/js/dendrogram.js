@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
+// This is https://observablehq.com/@d3/tidy-tree?collection=@d3/d3-hierarchy
+// Not https://observablehq.com/@d3/cluster-dendrogram?collection=@d3/d3-hierarchy
+
 const Dendrogram = (props) => {
     const domref = useRef(null);
     const width = 640;
